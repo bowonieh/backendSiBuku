@@ -13,14 +13,25 @@ class BukuController extends Controller
     {
         //
         
-        $data = BukuModel::all();
-        
-        return response()->json($data, 200);
+        $listBuku = BukuModel::all();
+        //$listBuku = BukuModel::where('judul_buku','like','%'.$request->item.'%')->get();
+        $data = [
+            'data' => $listBuku,
+            'message' => 'Daftar buku berhasil diambil',
+            'statusCode' => 200
+        ];
+        return response()->json($data, $data['statusCode']);
+        //return response()->json($data, 200);
     }
     public function cari(Request $request){
         if($request->filled('item')){
-            $data = BukuModel::where('judul_buku','like','%'.$request->item.'%')->get();
-            return response()->json($data, 200);
+            $listBuku = BukuModel::where('judul_buku','like','%'.$request->item.'%')->get();
+            $data = [
+                'data' => $listBuku,
+                'message' => 'Daftar buku berhasil diambil',
+                'statusCode' => 200
+            ];
+            return response()->json($data, $data['statusCode']);
         } 
     }
     /**

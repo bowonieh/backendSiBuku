@@ -18,6 +18,7 @@ return new class extends Migration
             $kolom->string('judul_buku',100)->nullable(false);
             $kolom->string('pengarang',100)->nullable(false);
             $kolom->string('penerbit',100)->nullable(false);
+            $kolom->string('cover',200)->nullable(true);
         });
     }
 

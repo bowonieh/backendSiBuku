@@ -13,5 +13,5 @@ class BukuModel extends Model
     protected $table = 'buku';
     protected $primaryKey = 'id_buku';
     public $timestamps = false;
-    protected $fillable = ['judul_buku','pengarang','penerbit'];
+    protected $fillable = ['judul_buku','pengarang','penerbit','cover'];
 }
